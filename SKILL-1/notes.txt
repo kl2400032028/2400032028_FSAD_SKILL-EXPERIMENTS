@@ -1,0 +1,3 @@
+Project: FSAD Git Workflow Simulation
+Description: This lab demonstrates branching, merging, and conflict resolution.
+Initial State: Stable
