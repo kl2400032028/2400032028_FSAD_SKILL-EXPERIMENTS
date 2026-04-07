@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    ═══════════════════════════════════════════════════════════════════
+      BEAN 1: Constructor Injection
+      All four fields injected via <constructor-arg> tags.
+    ═══════════════════════════════════════════════════════════════════
+    -->
+    <bean id="studentConstructor" class="com.skill.xml.Student">
+        <constructor-arg name="studentId" value="101"/>
+        <constructor-arg name="name"      value="Rahul Mehta"/>
+        <constructor-arg name="course"    value="Full Stack Development"/>
+        <constructor-arg name="year"      value="1"/>
+    </bean>
+
+    <!--
+    ═══════════════════════════════════════════════════════════════════
+      BEAN 2: Setter Injection
+      studentId and name use constructor-arg (required, no setter
+      for those in this bean config).
+      course and year are overridden via <property> (setter injection).
+    ═══════════════════════════════════════════════════════════════════
+    -->
+    <bean id="studentSetter" class="com.skill.xml.Student">
+        <!-- Initial values via constructor -->
+        <constructor-arg name="studentId" value="102"/>
+        <constructor-arg name="name"      value="Ananya Singh"/>
+        <constructor-arg name="course"    value="Cloud Computing"/>
+        <constructor-arg name="year"      value="1"/>
+        <!-- Setter Injection: overrides course and year -->
+        <property name="course" value="Cyber Security"/>
+        <property name="year"   value="2"/>
+    </bean>
+
+</beans>
